@@ -22,7 +22,7 @@ console.log(somma(1, 4));
 
 // snack 2
 
-const quadrato = (numero) => numero*numero;
+const quadrato = (n) => n** 2;
 
 console.log(quadrato(4));
 
@@ -39,3 +39,18 @@ function moltiplica (x, y) {
 }
 
 console.log(eseguiOperazione(5, 7, moltiplica));
+
+
+
+//  snack 4
+
+function creaTimer(tempo) {
+    return function() {
+        setTimeout(() => {
+            console.log("Tempo scaduto!");
+        }, tempo);
+    };
+}
+
+const timer4s = creaTimer(4000);
+timer4s();
