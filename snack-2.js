@@ -89,3 +89,38 @@ console.log(eseguiOperazione(5, 7, moltiplica));
 
 // const secondi = creaContatoreAutomatico(1000);
 // secondi();
+
+
+
+// snack 7
+
+// prima versione
+
+// const eseguiEferma = (messaggio) => {
+//     return setInterval(() => {
+//         console.log(messaggio);
+//     }, 2000);
+// }
+
+// const messaggioRipetuto = eseguiEferma("Oggi è una brutta giornata");
+
+// setTimeout(() =>{
+//     clearInterval(messaggioRipetuto);
+//     console.log("La giornata ha smesso di essere brutta");
+// }, 10000);
+
+
+// seconda versione
+
+const eseguiEferma = (messaggio, tempoAvvio, tempoStop) => {
+    const intervalId = setInterval(() => {
+        console.log(messaggio);
+    }, tempoAvvio);
+
+    setTimeout(() => {
+        clearInterval(intervalId);
+        console.log("Stop")
+    }, tempoStop)
+}
+
+const messaggioRipetuto = eseguiEferma("Oggi è una brutta giornata", 2000, 10000);
