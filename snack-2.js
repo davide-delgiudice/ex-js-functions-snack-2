@@ -112,15 +112,35 @@ console.log(eseguiOperazione(5, 7, moltiplica));
 
 // seconda versione
 
-const eseguiEferma = (messaggio, tempoAvvio, tempoStop) => {
-    const intervalId = setInterval(() => {
-        console.log(messaggio);
-    }, tempoAvvio);
+// const eseguiEferma = (messaggio, tempoAvvio, tempoStop) => {
+//     const intervalId = setInterval(() => {
+//         console.log(messaggio);
+//     }, tempoAvvio);
 
-    setTimeout(() => {
-        clearInterval(intervalId);
-        console.log("Stop")
-    }, tempoStop)
+//     setTimeout(() => {
+//         clearInterval(intervalId);
+//         console.log("Stop")
+//     }, tempoStop)
+// }
+
+// const messaggioRipetuto = eseguiEferma("Oggi è una brutta giornata", 2000, 10000);
+
+
+
+// snack 8 (bonus)
+
+const contoAllaRovescia = (n) => {
+    const intervalId = setInterval(() => {
+        if (n > 0) {
+            console.log(n);
+            n--
+        } else {
+            setTimeout(() => {
+                clearInterval(intervalId);
+                console.log("Tempo scaduto");
+            });
+        }
+    }, 1000);
 }
 
-const messaggioRipetuto = eseguiEferma("Oggi è una brutta giornata", 2000, 10000);
+let numero = contoAllaRovescia(5);
