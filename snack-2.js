@@ -1,24 +1,26 @@
 // snack 1
 
-function somma(primoNumero, secondoNumero) {
-    return primoNumero + secondoNumero;
-}
+// function somma(primoNumero, secondoNumero) {
+//     return primoNumero + secondoNumero;
+// }
 
-console.log(somma(1,4));
-
-
-const sommaAnonima = function(a, b) {
-    return a + b;
-}
-
-console.log(sommaAnonima(34, 21));
+// console.log(somma(1,4));
 
 
-const sommaFreccia = (a, b) => a+b;
+// const somma = function(a, b) {
+//     return a + b;
+// }
 
-console.log(sommaFreccia(20, 12));
+// console.log(somma(1, 4));
 
+
+const somma = (a, b) => a+b;
+
+console.log(somma(1, 4));
 
 
 // snack 2
 
+const quadrato = (numero) => numero*numero;
+
+console.log(quadrato(4));
