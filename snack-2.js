@@ -54,3 +54,21 @@ function creaTimer(tempo) {
 
 const timer4s = creaTimer(4000);
 timer4s();
+
+
+
+// snack 5
+
+const stampaOgniSecondo = (messaggio) => {
+    return setInterval(() => {
+        console.log(messaggio);
+    }, 1000);
+}
+
+let mess = stampaOgniSecondo("Mi piace la pizza");
+
+setTimeout(() => {
+    clearInterval(mess);
+    console.log("Stop");
+}, 5000);
+
