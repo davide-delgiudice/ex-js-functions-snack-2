@@ -149,16 +149,41 @@
 
 // snack 9 (bonus)
 
-const sequenzaOperazioni = (operazioni, intervallo) => {
-    operazioni.forEach((operazione, index) => {
-        setTimeout(() => {
-            operazione();
-        }, intervallo * index)
-    })
+// const sequenzaOperazioni = (operazioni, intervallo) => {
+//     operazioni.forEach((operazione, index) => {
+//         setTimeout(() => {
+//             operazione();
+//         }, intervallo * index)
+//     })
+// }
+
+// sequenzaOperazioni([
+//   () => console.log("Operazione 1"),
+//   () => console.log("Operazione 2"),
+//   () => console.log("Operazione 3")
+// ], 2000);
+
+
+
+// snack 10 (bonus)
+
+function creaThrottler(callback, limite) {
+    let ultimaEsecuzione = 0;
+
+    return function (...args){
+        const ora = Date.now();
+
+        if(ora - ultimaEsecuzione >= limite){
+            ultimaEsecuzione = ora;
+            callback(...args);
+        }else{
+            console.log("Non posso eseguire!")
+        }
+    }
 }
 
-sequenzaOperazioni([
-  () => console.log("Operazione 1"),
-  () => console.log("Operazione 2"),
-  () => console.log("Operazione 3")
-], 2000);
+const throttledLog = creaThrottler(() => console.log("Eseguito!"), 2000);
+
+throttledLog(); // "Eseguito!"
+throttledLog(); // "Ignorato" (chiamato troppo presto)
+setTimeout(throttledLog, 2500); // "Eseguito!" (dopo 2.5 secondi)
