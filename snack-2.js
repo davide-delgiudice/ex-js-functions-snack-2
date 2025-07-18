@@ -14,31 +14,31 @@
 // console.log(somma(1, 4));
 
 
-const somma = (a, b) => a + b;
+// const somma = (a, b) => a + b;
 
-console.log(somma(1, 4));
+// console.log(somma(1, 4));
 
 
 
 // snack 2
 
-const quadrato = (n) => n ** 2;
+// const quadrato = (n) => n ** 2;
 
-console.log(quadrato(4));
+// console.log(quadrato(4));
 
 
 
 //  snack 3
 
-function eseguiOperazione(a, b, operatore) {
-    return operatore(a, b);
-}
+// function eseguiOperazione(a, b, operatore) {
+//     return operatore(a, b);
+// }
 
-function moltiplica(x, y) {
-    return x * y;
-}
+// function moltiplica(x, y) {
+//     return x * y;
+// }
 
-console.log(eseguiOperazione(5, 7, moltiplica));
+// console.log(eseguiOperazione(5, 7, moltiplica));
 
 
 
@@ -129,18 +129,36 @@ console.log(eseguiOperazione(5, 7, moltiplica));
 
 // snack 8 (bonus)
 
-const contoAllaRovescia = (n) => {
-    const intervalId = setInterval(() => {
-        if (n > 0) {
-            console.log(n);
-            n--
-        } else {
-            setTimeout(() => {
-                clearInterval(intervalId);
-                console.log("Tempo scaduto");
-            });
-        }
-    }, 1000);
+// const contoAllaRovescia = (n) => {
+//     const intervalId = setInterval(() => {
+//         if (n > 0) {
+//             console.log(n);
+//             n--
+//         } else {
+//             setTimeout(() => {
+//                 clearInterval(intervalId);
+//                 console.log("Tempo scaduto");
+//             });
+//         }
+//     }, 1000);
+// }
+
+// let numero = contoAllaRovescia(5);
+
+
+
+// snack 9 (bonus)
+
+const sequenzaOperazioni = (operazioni, intervallo) => {
+    operazioni.forEach((operazione, index) => {
+        setTimeout(() => {
+            operazione();
+        }, intervallo * index)
+    })
 }
 
-let numero = contoAllaRovescia(5);
+sequenzaOperazioni([
+  () => console.log("Operazione 1"),
+  () => console.log("Operazione 2"),
+  () => console.log("Operazione 3")
+], 2000);
